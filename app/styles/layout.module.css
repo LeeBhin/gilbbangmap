@@ -1,59 +1,122 @@
 .header {
-    width: 80px;
-    height: 100vh;
-    background-color: white;
-    border-right: solid 1px lightgray;
-    position: absolute;
-    z-index: 1000;
+  width: 80px;
+  height: 100vh;
+  background-color: white;
+  border-right: solid 1px lightgray;
+  position: absolute;
+  z-index: 1000;
 }
 
 .logo {
-    height: 85px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 
 .navList {
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 10px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 15px;
 }
 
 .navWrap {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .navItemWrap {
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navItemWrap:hover {
-    animation: activeUp .5s;
+  animation: activeUp .5s;
 }
 
 .active {
-    background-color: #D3D3D3;
+  background-color: #D3D3D3;
 }
 
 .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 30px;
 }
 
 .navLink {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    text-align: center;
-    font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: black;
+}
+
+.popupOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.loginBtn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
