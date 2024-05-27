@@ -264,13 +264,12 @@ const Map: React.FC = () => {
     }
   };
 
-
-  const loadPendingShapes = async () => {
+  const loadShapes = async () => {
     try {
       const { data: shapesData, error } = await supabase
         .from('smoke_zones')
         .select('*')
-        .eq('status', 'pending');
+        .in('status', ['pending', 'approved']);
       if (error) {
         console.error('Error fetching shapes:', error.message);
         return;
@@ -361,7 +360,7 @@ const Map: React.FC = () => {
   };
 
   useEffect(() => {
-    loadPendingShapes();
+    loadShapes();
   }, []);
 
   return (
