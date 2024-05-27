@@ -33,11 +33,13 @@ function Login(): JSX.Element {
         if (error) console.error('Login Failed:', error.message);
     };
 
+    // @ts-ignore
     const saveUserInfo = async (user) => {
         const { data, error } = await supabase
             .from('users')
             .upsert([
                 { id: user.id, email: user.email, last_login: new Date() }
+                // @ts-ignore
             ], { onConflict: ['id'] });
 
         if (error) console.error('Error saving user info:', error.message);

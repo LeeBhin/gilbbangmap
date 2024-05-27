@@ -3,7 +3,7 @@
 import '@/app/styles/globals.css';
 import '@/app/styles/animations.css';
 import style from '@/app/styles/layout.module.css';
-import { Map, PlusMarker, Trophy, LoudSpeaker, Siren, User, LogOut, Login } from '@/public/svgs';
+import { Map, PlusMarker, Trophy, LoudSpeaker, Siren, LogOut, Login } from '@/public/svgs';
 import NavItem from './components/navItem';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';

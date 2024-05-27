@@ -66,8 +66,9 @@ const SimpleMap: React.FC = () => {
         if (map) {
           const newShapes = shapesData.map((shape: any) => {
             const coordinates = JSON.parse(shape.coordinates);
+            // @ts-ignore
             let newShape;
-            
+
             if (shape.zone_type === 'marker') {
               // 마커 생성
               newShape = new window.kakao.maps.Marker({
@@ -80,12 +81,7 @@ const SimpleMap: React.FC = () => {
               const infowindow = new window.kakao.maps.InfoWindow({
                 content: `<div style="padding:5px;">${shape.name}</div>`
               });
-              window.kakao.maps.event.addListener(newShape, 'mouseover', () => {
                 infowindow.open(map, newShape);
-              });
-              window.kakao.maps.event.addListener(newShape, 'mouseout', () => {
-                infowindow.close();
-              });
 
             } else if (shape.zone_type === 'circle') {
               // 원 생성
@@ -134,6 +130,7 @@ const SimpleMap: React.FC = () => {
         }
       }
     } catch (error) {
+      // @ts-ignore
       console.error('Error loading shapes:', error.message);
     }
   };

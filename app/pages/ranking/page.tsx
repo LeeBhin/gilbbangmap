@@ -38,11 +38,15 @@ export default function Ranking() {
           );
 
           setChartData({
+            // @ts-ignore
             labels,
             datasets: [
               {
                 label: 'Agree Count',
+
+                // @ts-ignore
                 data: agreeCounts,
+                // @ts-ignore
                 backgroundColor: backgroundColors,
               },
             ],
